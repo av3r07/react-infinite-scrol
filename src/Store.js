@@ -13,6 +13,9 @@ const configureStore = () => {
         )
     );
     sagaMiddleware.run(rootSaga);
+    store.dispatch({
+        type : 'FETCH_IMAGES_REQUESTED'
+    })
     return store;
 };
 

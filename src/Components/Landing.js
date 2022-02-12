@@ -4,15 +4,16 @@ import Images from './Images';
 
 function Landing({ images, isLoading, loadImagesRequest }) {
     useEffect(() => {
-        window.scrollTo(0, 0)
-        loadImagesRequest();
-        window.addEventListener('scroll', () => {
-            if((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !isLoading) {
-                loadImagesRequest();
-            }
-        });
+        window.scrollTo(0, 0);
         return window.removeEventListener('scroll', () => {});
     }, [])
+
+    window.addEventListener('scroll', () => {
+        if((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !isLoading) {
+            loadImagesRequest();
+        }
+    });
+    
     return (
         <div className = 'container'>
             <ul id = 'images'>
