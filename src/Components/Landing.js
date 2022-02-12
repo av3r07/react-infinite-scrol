@@ -7,13 +7,12 @@ function Landing({ images, isLoading, loadImagesRequest }) {
         window.scrollTo(0, 0)
         loadImagesRequest();
         window.addEventListener('scroll', () => {
-            const elem = document.getElementById('images');
             if((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !isLoading) {
                 loadImagesRequest();
             }
         });
         return window.removeEventListener('scroll', () => {});
-    }, [])
+    }, [isLoading, loadImagesRequest])
     return (
         <div className = 'container'>
             <ul id = 'images'>
