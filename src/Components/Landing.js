@@ -12,7 +12,7 @@ function Landing({ images, isLoading, loadImagesRequest }) {
             }
         });
         return window.removeEventListener('scroll', () => {});
-    }, [isLoading, loadImagesRequest])
+    }, [])
     return (
         <div className = 'container'>
             <ul id = 'images'>
