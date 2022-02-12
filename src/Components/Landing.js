@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import Images from './Images';
 
 function Landing({ images, isLoading, loadImagesRequest }) {
@@ -20,7 +21,9 @@ function Landing({ images, isLoading, loadImagesRequest }) {
                 {(images && images.length > 0) && (
                 images.map(image => (
                     <li key = {image.id}>
-                        <Images imageUrl={image.urls.full} />
+                        <LazyLoadComponent>
+                            <Images imageUrl={image.urls.full} />
+                        </LazyLoadComponent>
                     </li>
                 ))
             )}
