@@ -5,7 +5,7 @@ const fetchImages = async (page) => {
         url : `https://api.unsplash.com/photos?page=${page}&per_page=30`,
         method : 'GET',
         headers : {
-            'Authorization' : 'Client-ID AAi1EzD2MOPkYKuIFAAq1aI5X2NIs1-Fs6Js59UiqpY'
+            'Authorization' : 'Client-ID -JWnzmDSXjVS2YvhGvpUW8UyIMVAvmzeM-fikZ-K1ig'
         }
     });
     if
